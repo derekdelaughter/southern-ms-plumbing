@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Southern MS Plumbing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Southern MS Plumbing</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#contact">Contact</a>
+        <a href="#contractors">Contractors</a>
+        <a href="#owner">Owner</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Southern MS Plumbing provides reliable plumbing and civil construction
+        services throughout Mississippi. We focus on quality workmanship, clear
+        communication, and dependable project delivery.
+      </p>
+    </section>
+
+    <section id="jobs">
+      <h2>Current & Past Jobs</h2>
+      <ul id="jobList"></ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <h3>Request a Quote</h3>
+      <form action="quote.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="details"
+          id="quoteDetails"
+          maxlength="500"
+          placeholder="Project Details (max 500 characters)"
+          required
+        ></textarea>
+
+        <small id="charCount">0 / 500 characters</small>
+
+        <button type="submit">Request Quote</button>
+      </form>
+    </section>
+
+    <section id="contractors">
+      <h2>Contractor Forms</h2>
+
+      <p>
+        <a href="forms/subcontractor_request.pdf" download
+          >Download Subcontractor Request</a
+        >
+      </p>
+      <p>
+        <a href="forms/quote_submission.pdf" download
+          >Download Quote Submission</a
+        >
+      </p>
+
+      <h3>Upload Completed Documents</h3>
+      <form
+        action="upload.php"
+        method="POST"
+        enctype="multipart/form-data"
+        onsubmit="return confirmUpload();"
+      >
+        <input type="file" name="contractor_file" required />
+
+        <h4>Documents Included:</h4>
+
+        <label>
+          <input type="checkbox" name="docs[]" value="Blueprints" required />
+          Blueprints </label
+        ><br />
+
+        <label>
+          <input
+            type="checkbox"
+            name="docs[]"
+            value="Contractor Estimate"
+            required
+          />
+          Contractor Estimate </label
+        ><br />
+
+        <label>
+          <input
+            type="checkbox"
+            name="docs[]"
+            value="Contractor Timeframe"
+            required
+          />
+          Contractor Timeframe </label
+        ><br />
+
+        <label>
+          <input
+            type="checkbox"
+            name="docs[]"
+            value="Request Original Documents"
+          />
+          Request original documents from contractor </label
+        ><br /><br />
+
+        <label>
+          <input type="checkbox" id="verifyFile" required />
+          I confirm this is the correct file for submission </label
+        ><br /><br />
+
+        <button type="submit">Upload File</button>
+      </form>
+    </section>
+
+    <section id="owner">
+      <h2>Owner</h2>
+      <p><strong>Owner:</strong> Derek DeLaughter</p>
+      <p><strong>Email:</strong> DerekDeLaughter@gmail.com</p>
+      <p><strong>Phone:</strong> 601-754-6162</p>
+      <p>
+        Southern MS Plumbing is owner-operated, ensuring direct communication,
+        accountability, and quality control on every project.
+      </p>
+    </section>
+
+    <footer>&copy; 2026 Southern MS Plumbing</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
